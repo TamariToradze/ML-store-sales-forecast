@@ -14,6 +14,7 @@ Problem Definition:
 
 ქმნის უნიკალურ კოდირებულ ID-ს მაღაზია-დეპარტამენტის (Store_Dept) კომბინაციებისთვის.
 
+გამომდინარე იქედან რომ მოდელს არ აქვს დროის აღქმა, ვამატებთ შემდეგ სვეტებს. 
 დროითი ცვლადები: დღე, კვირა, თვე, წელი, კვარტალი, წლის რომელი დღეა, თვის რომელი კვირაა(უკეთესად რომ დაიჭიროს ციკლური და სეზონური პატერნები)
 
 დეკემბრის და მეოთხე კვარტალის ცალკე მონიშვნა (IsDecember, Is(Oct – Dec)). რადგან ამ პერიოდში გვაქვს გაყიდვების პიკები.
@@ -40,3 +41,23 @@ Problem Definition:
 
 მაღაზიის ზომის გავლენა:
 მაღაზიის ზომის ინტერაქცია საწვავის ფასსა და მაღაზიის ტიპთან
+
+ვალაგებთ მონაცემებს თარიღის მიხედვით
+def temporal_cross_validation_split(train_data, n_splits=5):
+    -დროის მიხედვით split-ები, არა რანდომული
+    -ყოველი fold-ი იყენებს მომავალ მონაცემებს validation-ისთვის
+
+
+MLflow tracking:
+LightGBM_Feature_Engineering:
+https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/7baaad47ced147e695af5a1be0f1aee2
+LightGBM_Cleaning:
+https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/449257015f1d43e4b3809efe8ea60006
+LightGBM_CrossValidation:
+https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/e91be9d39afa4b1ab3d283628ad6e1a9
+LightGBM_Final_Training
+https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/97342c4589924bbca5d94ee0fe696c4c
+LightGBM_Prediction
+https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/409b0ab8cd134be693f103b1729e819d
+LightGBM_Model_Selection
+https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/d8cbe7007ab74468a794ba730226321f
