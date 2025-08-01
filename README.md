@@ -1,12 +1,52 @@
 # ML-store-sales-forecast
-Problem Definition:
+# Problem Definition:
 მონაცემებში წარმოდგენილია ვოლმარტის გაყიდვები 45 სხვადასხვა მაღაზიაში, რომლებიც სხვადასხვა რეგიონებში მდებარეობს.
 თითოეულ მაღაზიაში არის რამდენიმე დეპარტამენტი და დავალება არის დეპარტამენტის გაყიდვების პროგნოზირება თითოეულ მაღაზიაში.
 
 ვოლმარტი მთელი წლის განმავლობაში ატარებს სხვადასხვა ტიპის ფასდაკლებებს. 
 ეს ფასდაკლებები წინ უსწრებს მნიშვნელოვან დღესასწაულებს, რომელთა შორის არიან: სუპერ ბოული, შრომის დღე, მადლიერების დღე და შობა.(4 ყველაზე დიდი დღესასწაული უკვეთება).
 
-#EDA
+# EDA
+გვაქვს 3 სხვადასხვა ფაილი. 
+train.csv
+features.csv
+stores.csv
+ამიტომ პირველ რიგში ვაკეთებთ ამათ დაჯოინებას.
+
+გვაქვს 3 ტიპის მაღაზია: A,B,C
+<img width="1150" height="770" alt="image" src="https://github.com/user-attachments/assets/0a500d47-d44a-4a53-a305-7c88eade20fc" />
+ვხედავთ, რომ A ტიპის მაღაზიების მედიანები უფრო მაღალია, ვიდრე სხვა ტიპის მაღაზიების მედიანები, ამიტომ A ტიპის მაღაზიის ყოველკვირეული გაყიდვები სხვა ტიპის მაღაზიებთან შედარებით მეტია.
+
+ვნახეთ, როგორ არის დამოკიდებული weekly_sales დღესასწაულებზე
+<img width="1176" height="700" alt="image" src="https://github.com/user-attachments/assets/650d4755-dd27-4f1e-ba7f-aaad49aefe5b" />
+გაყიდვები იზრდება დღესასწაულების პერიოდში.
+
+<img width="1268" height="567" alt="image" src="https://github.com/user-attachments/assets/1b94c365-68e5-4752-9854-a462c6672347" />
+გვაქვს სეზონურობა
+
+დიკი ფულერის ტესტის გამოყენებით შეგვიძლია შევამოწმოთ სტაციოანლურობა.(ნულოვანი ჰიპოთეზის დაშვება უარყოფა...)
+სტაციონალური მონაცემები გვჭირდება ისეთი მოდელისთვის როგორიცაა მაგ: ARIMA
+<img width="411" height="134" alt="image" src="https://github.com/user-attachments/assets/31b53bf2-624d-4323-90e3-e22d6f0281ea" />
+ADF<0 p<0.05 სტაციონალურია 
+
+კორელაციის მატრიცა ავაგეთ და დავაკვირდით გვქონდა თუ არა კორელირებული მონაცემები.
+<img width="869" height="764" alt="image" src="https://github.com/user-attachments/assets/d0a4e1d2-924b-459b-abe1-56b647238446" />
+არ აქვთ მკვეთრი კორელაცია
+
+დავაკვირდით რა გავლენა ქონდა CPI, fuel price, unemployment, temperature ტიპის მონაცემებს weekly sale-ზე
+<img width="928" height="750" alt="image" src="https://github.com/user-attachments/assets/f83258bd-fdd3-4c5e-ba03-fe2aa92648d1" />
+
+ვნახეთ როგორ იცვლებოდა გაყიდვები დღესასწაულები კვირაში.
+<img width="995" height="405" alt="image" src="https://github.com/user-attachments/assets/fe4d5aee-252b-46cb-8d74-dea1e3cd8978" />
+<img width="943" height="408" alt="image" src="https://github.com/user-attachments/assets/128a3dbf-8ea4-4809-a91f-e66b2ca1096b" />
+<img width="1012" height="405" alt="image" src="https://github.com/user-attachments/assets/d57637c4-26e9-4d00-ae3c-ba2d3e895705" />
+<img width="988" height="416" alt="image" src="https://github.com/user-attachments/assets/7b7f1b14-ecc4-4d21-89e2-b95e3094cbff" />
+
+დავაკვირდით გამოტოვებულ მნიშვნელობებს:
+<img width="996" height="541" alt="image" src="https://github.com/user-attachments/assets/fd0d0bfd-9f63-4259-b420-4ca84c6659c0" />
+
+ასევე ვნახეთ თუ როგორ იცვლებოდა გაყიდვები სეზონებისა და თვეების მიხედვით. 
+რომელ სეზონზე ან თვეში იყო ხოლმე ყველაზე მაღალი. 
 
 
 # LightGBM
@@ -107,5 +147,4 @@ LaborDayWeek
 ThanksgivingWeek
 ChristmasWeek
 grid search-ის გამოყენებით შერჩეულია საუკეთესო პარამეტრები 
-<img width="1057" height="781" alt="image" src="https://github.com/user-attachments/assets/8ad18398-7cb8-47e4-a038-55e8ff009201" />
 
