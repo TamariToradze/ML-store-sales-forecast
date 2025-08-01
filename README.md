@@ -31,6 +31,7 @@ ADF<0 p<0.05 სტაციონალურია
 
 კორელაციის მატრიცა ავაგეთ და დავაკვირდით გვქონდა თუ არა კორელირებული მონაცემები.
 <img width="869" height="764" alt="image" src="https://github.com/user-attachments/assets/d0a4e1d2-924b-459b-abe1-56b647238446" />
+
 არ აქვთ მკვეთრი კორელაცია
 
 დავაკვირდით რა გავლენა ქონდა CPI, fuel price, unemployment, temperature ტიპის მონაცემებს weekly sale-ზე
