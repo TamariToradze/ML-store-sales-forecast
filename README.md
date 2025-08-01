@@ -46,6 +46,8 @@ ADF<0 p<0.05 სტაციონალურია
 <img width="1012" height="405" alt="image" src="https://github.com/user-attachments/assets/d57637c4-26e9-4d00-ae3c-ba2d3e895705" />
 <img width="988" height="416" alt="image" src="https://github.com/user-attachments/assets/7b7f1b14-ecc4-4d21-89e2-b95e3094cbff" />
 
+ანუ დღესასწაულის დღეები უმეტესად მთელი კვირის გაყიდვებზე ახდენს გავლენას
+
 დავაკვირდით გამოტოვებულ მნიშვნელობებს:
 <img width="996" height="541" alt="image" src="https://github.com/user-attachments/assets/fd0d0bfd-9f63-4259-b420-4ca84c6659c0" />
 
