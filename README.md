@@ -7,7 +7,6 @@ Problem Definition:
 ეს ფასდაკლებები წინ უსწრებს მნიშვნელოვან დღესასწაულებს, რომელთა შორის არიან: სუპერ ბოული, შრომის დღე, მადლიერების დღე და შობა.(4 ყველაზე დიდი დღესასწაული უკვეთება).
 
 # LightGBM
-# data preprocessing
 აერთიანებს მონაცემებს 
 უმკლავდება დუბლირებულ სვეტებს (მაგ. IsHoliday_x, IsHoliday_y) 
 ვავსებთ nan მონაცემებს
@@ -72,3 +71,37 @@ https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/409b0ab8
 
 LightGBM_Model_Selection
 https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/d8cbe7007ab74468a794ba730226321f
+
+# ARIMA
+ARIMA = AutoRegressive Integrated Moving Average
+ARIMA(p,d,q) სადაც:
+- p = AR (AutoRegressive) - წარსული მნიშვნელობების რაოდენობა
+- d = I  (Integrated) - დიფერენციაციის ხარისხი (სტაციონარობისთვის)  
+- q = MA (Moving Average) - წარსული შეცდომების რაოდენობა
+ტრენინგის მონაცემები:
+ARIMA მოდელი მხოლოდ Weekly_Sales ცვლადზე არის დატრენინგებული
+
+თითოეული მაღაზიისთვის ყველა დეპარტამენტის Weekly_Sales ერთმანეთს ემატება კონკრეტული თარიღისთვის.
+45 მაღაზია გვაქვს dataset-ში
+თითოეული მაღაზიისთვის ყველა დეპარტამენტის Weekly_Sales ჯამდება ერთ თარიღზე.
+შედეგად მიიღება: თითოეული მაღაზიისთვის თარიღების მიხედვით ჯამური Weekly_Sales
+დატრენინგებულია 45 სხვადასხვა მოდელი.
+საუკეთესო კონფიგურაციად ირჩევს იმას, რომელსაც აქვს ყველაზე დაბალი საშუალო MAPE ყველა მაღაზიაზე.
+
+# Prophet
+y(t) = g(t) + s(t) + h(t)
+სადაც:
+g(t) - ტრენდის კომპონენტი, რომელიც ამსახავს სამიზნე ცვლადის არაწრფივ ქცევას
+s(t) - სეზონურობის კომპონენტი, რომელიც იჭერს პერიოდულ შაბლონებს
+h(t) - დღესასწაულების კომპონენტი, რომელიც მოდელირებს სპეციალური მოვლენების ეფექტებს
+
+Prophet Input → 
+ds (Date)
+y (Weekly_Sales) 
+IsHoliday
+SuperbowlWeek
+LaborDayWeek
+ThanksgivingWeek
+ChristmasWeek
+grid search-ის გამოყენებით შერჩეულია საუკეთესო პარამეტრები 
+
