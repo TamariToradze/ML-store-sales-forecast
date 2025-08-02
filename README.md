@@ -213,3 +213,26 @@ N-BEATS (Neural Basis Expansion Analysis for Time Series) არის თან
 დანიშნულება: სწავლობს დარჩენილ patterns-ებს
 მეთოდი: ზოგადი neural network ბლოკები
 სკოუპი: რაც trend-მა და seasonality-მ ვერ ისწავლა
+ბლოკების მუშაობის პრინციპი
+თითოეული ბლოკი ქმნის ორ კომპონენტს:
+
+Forecast: მომავლის h კვირის პროგნოზი
+Backcast: წარსულის რეკონსტრუქცია
+
+Backcast Residual Learning:
+ყოველ შემდეგ ბლოკს აკლდება წინა ბლოკის backcast
+ეს უზრუნველყოფს, რომ შემდეგი ბლოკი უკვე ამოცნობილ patterns-ებს აღარ ისწავლოს
+საბოლოო forecast = ყველა ბლოკის forecast-ების ჯამი
+
+ჰიპერპარამეტრის ტუნინგის შედეგად საუკეთესო კონფიგურაცია:
+NBEATS(
+    input_size=52,                               # წინა 52 კვირის მონაცემები
+    h=40,                                        # 40 კვირიანი პროგნოზი
+    stack_types=["identity","trend","seasonality"],  # ბლოკების ტიპები
+    n_blocks=[3,3,3],                            # თითო stack-ში 3 ბლოკი
+    n_polynomials=2,                             # პოლინომის ხარისხი trend-ისთვის
+    n_harmonics=2,                               # კოსინუს-სინუს წყვილები seasonality-ისთვის
+    learning_rate=0.001,                         # სწავლის სიჩქარე
+    max_steps=2000,                              # ტრენინგის epochs
+    batch_size=64                                # batch ზომა
+)
