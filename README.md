@@ -219,10 +219,13 @@ N-BEATS (Neural Basis Expansion Analysis for Time Series) არის თან
 Forecast: მომავლის h კვირის პროგნოზი
 Backcast: წარსულის რეკონსტრუქცია
 
-Backcast Residual Learning:
-ყოველ შემდეგ ბლოკს აკლდება წინა ბლოკის backcast
-ეს უზრუნველყოფს, რომ შემდეგი ბლოკი უკვე ამოცნობილ patterns-ებს აღარ ისწავლოს
 საბოლოო forecast = ყველა ბლოკის forecast-ების ჯამი
+
+    მოდელისთვის საჭირო სვეტები:  
+    unique_id - ღირების მაგალითი: "1_Store_Dept_5", "2_Store_Dept_12"
+    ds - თარიღი (datetime ფორმატში)
+    y - მიზნობრივი ცვლადი (Weekly_Sales)
+    IsHoliday - დღესასწაულის ინდიკატორი 
 
 ჰიპერპარამეტრის ტუნინგის შედეგად საუკეთესო კონფიგურაცია:
 NBEATS(
@@ -244,3 +247,7 @@ NBEATS(
     
     batch_size=64                                # batch ზომა
 )
+
+R² = 0.9348 
+MAPE = 4.10% 
+WMAE= 39.1575
