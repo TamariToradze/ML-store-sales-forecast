@@ -227,12 +227,20 @@ Backcast Residual Learning:
 ჰიპერპარამეტრის ტუნინგის შედეგად საუკეთესო კონფიგურაცია:
 NBEATS(
     input_size=52,                               # წინა 52 კვირის მონაცემები
+    
     h=40,                                        # 40 კვირიანი პროგნოზი
+    
     stack_types=["identity","trend","seasonality"],  # ბლოკების ტიპები
+    
     n_blocks=[3,3,3],                            # თითო stack-ში 3 ბლოკი
+    
     n_polynomials=2,                             # პოლინომის ხარისხი trend-ისთვის
+    
     n_harmonics=2,                               # კოსინუს-სინუს წყვილები seasonality-ისთვის
+    
     learning_rate=0.001,                         # სწავლის სიჩქარე
+    
     max_steps=2000,                              # ტრენინგის epochs
+    
     batch_size=64                                # batch ზომა
 )
