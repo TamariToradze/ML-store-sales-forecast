@@ -193,4 +193,23 @@ ThanksgivingWeek
 ChristmasWeek
 grid search-ის გამოყენებით შერჩეულია საუკეთესო პარამეტრები 
 
+# N-BEATS 
+N-BEATS (Neural Basis Expansion Analysis for Time Series) არის თანამედროვე ღრმა სწავლების მოდელი დროითი მწკრივების პროგნოზირებისთვის, რომელიც შეიქმნა 2019 წელს.
+არის univariate- არ იყენებენ ეგზოგენურ ცვლადებს.
+ N-BEATS არქიტექტურა
+ Input (12 weeks) → Block 1 → Block 2 → Block 3 → Output (8 weeks forecast)
+ N-BEATS მოდელის არქიტექტურა
+1. Trend Block (ტრენდი)
+დანიშნულება: სწავლობს ზოგად, გრძელვადიან ტრენდს
+მეთოდი: პოლინომიური ფიტი (polynomial fitting)
+სკოუპი: დიდი დროის მონაკვეთი, general direction
 
+2. Seasonality Block (სეზონურობა)
+დანიშნულება: ამოიცნობს სეზონურ პატერნებს და ციკლებს
+მეთოდი: ფურიე სერიის დახმარებით (Fourier series)
+სკოუპი: მოკლე მონაკვეთის ტენდენციები (მაგ. დღესასწაულების სპაიკები)
+
+3. Identity/Generic Blocks (რეზიდუალები)
+დანიშნულება: სწავლობს დარჩენილ patterns-ებს
+მეთოდი: ზოგადი neural network ბლოკები
+სკოუპი: რაც trend-მა და seasonality-მ ვერ ისწავლა
