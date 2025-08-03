@@ -260,19 +260,39 @@ ARIMA მოდელი მხოლოდ Weekly_Sales ცვლადზე �
 ## Prophet
 y(t) = g(t) + s(t) + h(t)
 სადაც:
+
 g(t) - ტრენდის კომპონენტი, რომელიც ამსახავს სამიზნე ცვლადის არაწრფივ ქცევას
+
 s(t) - სეზონურობის კომპონენტი, რომელიც იჭერს პერიოდულ შაბლონებს
+
 h(t) - დღესასწაულების კომპონენტი, რომელიც მოდელირებს სპეციალური მოვლენების ეფექტებს
 
 Prophet Input → 
+
 ds (Date)
+
 y (Weekly_Sales) 
+
 IsHoliday
+
 SuperbowlWeek
+
 LaborDayWeek
+
 ThanksgivingWeek
+
 ChristmasWeek
+
 grid search-ის გამოყენებით შერჩეულია საუკეთესო პარამეტრები 
+
+Store-Specific Models: ყოველი store-ისთვის ცალკე Prophet მოდელი
+მიზეზი: ყოველი store-ს უნიკალური patterns და seasonality აქვს
+
+Store-Level Prediction: Prophet იძლევა store-level ტოტალურ პრედიქციას
+Department Ratios: ისტორიული department-wise განაწილება
+Final Prediction: store_prediction * department_ratio
+
+ View experiment at: https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/14
 
 ## N-BEATS 
 N-BEATS (Neural Basis Expansion Analysis for Time Series) არის თანამედროვე ღრმა სწავლების მოდელი დროითი მწკრივების პროგნოზირებისთვის, რომელიც შეიქმნა 2019 წელს.
