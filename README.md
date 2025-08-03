@@ -303,6 +303,9 @@ https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/409b0ab8
 LightGBM_Model_Selection
 https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/17/runs/d8cbe7007ab74468a794ba730226321f
 
+<img width="1013" height="71" alt="image" src="https://github.com/user-attachments/assets/e61aa087-20d9-4475-87b9-af14973f59c1" />
+
+
 # Classical Statistical Time-Series Models
 ## Data Preprocessing
 Merger კლასი
@@ -395,6 +398,8 @@ Grid Search - 20 განსხვავებული ARIMA პარამ�
 - მაგრამ ვერ ივნებს ორივეს ერთდროულად!
 - 
   • Best Mean MAPE: 6.0226
+  
+<img width="1059" height="78" alt="image" src="https://github.com/user-attachments/assets/c75f5a58-742b-4a30-aff2-6920c1d446c4" />
 
 ## Prophet
 y(t) = g(t) + s(t) + h(t)
@@ -433,6 +438,9 @@ Final Prediction: store_prediction * department_ratio
 - და წლიური: დეკემბერი > იანვარი
 - და თვიური: თვის დასაწყისი > თვის ბოლო
 - და დღიური: საღამო > დილა
+
+  <img width="1054" height="78" alt="image" src="https://github.com/user-attachments/assets/93bd3db3-6f21-4518-9815-28d16cd89f6c" />
+
 
 ## SARIMAX
 გამოვიყენეთ SARIMAX მოდელი Walmart-ის გაყიდვების (Weekly Sales) პროგნოზირებისთვის, როგორც time series ანალიზის მეთოდი, რომელიც ითვალისწინებს სეზონურობას. 
@@ -527,6 +535,11 @@ Weighted Error Distribution
 
 MLflow Run URL: https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/19/runs/66cc17634ef14ce7813f8b135a3e6ef6
 
+ვაი...
+<img width="1020" height="66" alt="image" src="https://github.com/user-attachments/assets/010dbe33-21e5-4155-85b5-f5f591080e93" />
+
+
+
 ## DLinear
 DLinear  არის deep learning-ის ერთ-ერთი მოდელი,რომელიც დაფუძნებულია time series ანალიზზე. მოდელი ითვალისწინებს სეზონურ და 'ტრენდულ' (ტენდენციური კომპონენტები) კომპონენტებს, ასევე გარე ფაქტორებს. ყველა ექსპერიმენტი დაფიქსირდა MLflow-ით Dagshub-ის რეპოზიტორიაში
 
@@ -559,16 +572,7 @@ https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflo
  <img width="1719" height="387" alt="image" src="https://github.com/user-attachments/assets/8ef0ef03-d09f-402c-8ea8-48e88003ac11" />
 
 
-საბოლოო შედეგები:
-<img width="1013" height="71" alt="image" src="https://github.com/user-attachments/assets/e61aa087-20d9-4475-87b9-af14973f59c1" />
 
-<img width="1054" height="78" alt="image" src="https://github.com/user-attachments/assets/93bd3db3-6f21-4518-9815-28d16cd89f6c" />
-
-<img width="1059" height="78" alt="image" src="https://github.com/user-attachments/assets/c75f5a58-742b-4a30-aff2-6920c1d446c4" />
-
-
-ვაი...
-<img width="1020" height="66" alt="image" src="https://github.com/user-attachments/assets/010dbe33-21e5-4155-85b5-f5f591080e93" />
 
 
 
