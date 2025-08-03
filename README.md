@@ -227,6 +227,8 @@ xgb_params = {
 
 <img width="1395" height="595" alt="image" src="https://github.com/user-attachments/assets/e2499faa-fa58-4c97-bdba-1253fd6da327" />
 
+<img width="1062" height="73" alt="image" src="https://github.com/user-attachments/assets/58dd2c67-7e64-4ddc-ba4d-b9ab6e63cc86" />
+
 ## LightGBM
 აერთიანებს მონაცემებს 
 უმკლავდება დუბლირებულ სვეტებს (მაგ. IsHoliday_x, IsHoliday_y) 
