@@ -183,6 +183,50 @@ https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflo
 <img width="789" height="492" alt="image" src="https://github.com/user-attachments/assets/f0145e85-d281-4c55-bc3b-c5ccc59ee002" />
 
 
+## XGBoost
+მოდელი დავატრენინგე შემდეგი ჰიპერპარამეტრებით:
+xgb_params = {
+        'n_estimators': 500,
+        'max_depth': 6,
+        'learning_rate': 0.1,
+        'subsample': 0.8,
+        'colsample_bytree': 0.8,
+        'random_state': 42,
+        'n_jobs': -1,
+        'early_stopping_rounds': 50,
+        'eval_metric': 'mae'
+    }
+მოდელი ტრენინგდა იმავე 80%-იან dataზე,overfitting-ის თავიდან ასაცილებლად
+
+შედეგები: 
+- XGBoost (Train) Metrics:
+  - MAE: 1859.0164
+  - MSE: 9748211.0595
+  - RMSE: 3122.2125
+  - R2: 0.9752
+  - MAPE: 2419.1423
+  - WMAE: 1859.0164
+- XGBoost (Val) Metrics:
+  - MAE: 2290.7544
+  - MSE: 14200514.7450
+  - RMSE: 3768.3570
+  - R2: 0.9559
+  - MAPE: 7993.1636
+  - WMAE: 2290.7544
+ 
+  https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflow/#/experiments/3/runs/fd3eda7176954ba881ba2f2f41b2babf
+
+  https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflow/#/experiments/3
+
+  <img width="787" height="491" alt="image" src="https://github.com/user-attachments/assets/d4811982-b433-4f73-bd82-6ff79e10e93e" />
+
+
+მოდელების შესადარებლად გამოვიყენოთ შემდეგი გრაფიკები:
+
+<img width="1188" height="592" alt="image" src="https://github.com/user-attachments/assets/a0988d95-5a8b-4eed-98a4-b3d6d65c0598" />
+
+<img width="1395" height="595" alt="image" src="https://github.com/user-attachments/assets/e2499faa-fa58-4c97-bdba-1253fd6da327" />
+
 ## LightGBM
 აერთიანებს მონაცემებს 
 უმკლავდება დუბლირებულ სვეტებს (მაგ. IsHoliday_x, IsHoliday_y) 
@@ -387,6 +431,10 @@ Final Prediction: store_prediction * department_ratio
 - და წლიური: დეკემბერი > იანვარი
 - და თვიური: თვის დასაწყისი > თვის ბოლო
 - და დღიური: საღამო > დილა
+
+## SARIMAX
+
+
 
 ## N-BEATS 
 N-BEATS (Neural Basis Expansion Analysis for Time Series) არის თანამედროვე ღრმა სწავლების მოდელი დროითი მწკრივების პროგნოზირებისთვის, რომელიც შეიქმნა 2019 წელს.
