@@ -132,7 +132,55 @@ Markdown-ები აშკარა გავლენას ახდენ�
 9. Prophet: Facebook-ის მიერ შექმნილი მოდელი, რომელიც ავტომატურად ამუშავებს სეზონურობას და დღესასწაულებს
 
 ## Linear Regression
+Linear Regression გამოვიყენე საბაზისო მოდელად, რომელიც ცდილობს დაიჭიროს წრფივი დამოკიდებულება Weekly_Sales-სა და სხვადასხვა featureb-ს შორის (მაგ., Store_Sales_Mean, HolidaySeason, CPI), ამის გამო ამ მოდელის დატრენინგება არ იყო კარგი იდეა ამ პრობლემისთვის... 
 
+შედეგები: 
+- Linear Regression (Train) Metrics:
+  - MAE: 7160.7770
+  - MSE: 136859787.0574
+  - RMSE: 11698.7088
+  - R2: 0.6523
+  - MAPE: 12529.0283
+  - WMAE: 7160.7770
+- Linear Regression (Val) Metrics:
+  - MAE: 6735.7998
+  - MSE: 89510679.6375
+  - RMSE: 9461.0084
+  - R2: 0.7218
+  - MAPE: 36485.8000
+  - WMAE: 6735.7998
+ 
+https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflow/#/experiments/1/runs/f1a17c382ebe417897e4752d783284a6
+
+https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflow/#/experiments/1?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All+Runs&datasetsFilter=W10%3D
+
+<img width="786" height="483" alt="image" src="https://github.com/user-attachments/assets/123fb3ed-7944-4172-826a-90ebe3c26ea8" />
+
+## Random Forest
+Random Forest აერთიანებს 100 გადაწყვეტილების ხეს არაწრფივი ურთიერთობების დასაფიქსირებლად. გამოვიყენე პარამეტრები: n_estimators=100, max_depth=15, min_samples_split=5, min_samples_leaf=2, random_state=42 და n_jobs=-1 .
+პარამეტრების საუკეთესო კომბინაცია იყო n_estimators=100, max_depth=15 და min_samples_split=5, რამაც გააუმჯობესა მოდელის სიზუსტე და შეამცირა overfitting
+
+შედეგები: 
+- Random Forest (Train) Metrics:
+  - MAE: 1230.6036
+  - MSE: 6340282.2819
+  - RMSE: 2517.9917
+  - R2: 0.9839
+  - MAPE: 1079.2664
+  - WMAE: 1230.6036
+- Random Forest (Val) Metrics:
+  - MAE: 1661.9067
+  - MSE: 9792586.2384
+  - RMSE: 3129.3108
+  - R2: 0.9696
+  - MAPE: 3713.2180
+  - WMAE: 1661.9067
+ 
+https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflow/#/experiments/2/runs/d929068ee28b462b844e078c7789c66d
+
+https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflow/#/experiments/2?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All+Runs&datasetsFilter=W10%3D
+
+<img width="789" height="492" alt="image" src="https://github.com/user-attachments/assets/f0145e85-d281-4c55-bc3b-c5ccc59ee002" />
 
 
 ## LightGBM
