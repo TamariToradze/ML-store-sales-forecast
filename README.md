@@ -433,8 +433,13 @@ Final Prediction: store_prediction * department_ratio
 - და დღიური: საღამო > დილა
 
 ## SARIMAX
+გამოვიყენეთ SARIMAX მოდელი Walmart-ის გაყიდვების (Weekly Sales) პროგნოზირებისთვის, როგორც time series ანალიზის მეთოდი, რომელიც ითვალისწინებს სეზონურობას. 
 
+SARIMAX მოდელი გამოიყen ARIMA-ს 'გაუმჯობესებული' ვერსია, რომელიც ითვალისწინებს სეზონურ კომპონენტებს და გარე ცვლადებს, როგორიცაა Temperature, CPI, Unemployment და MarkDown-ები. მოდელის პარამეტრები (p, d, q) და სეზონური პარამეტრები (P, D, Q, m) ავტომატურად განისაზღვრა pmdarima.auto_arima-ს მეშვეობით, სადაც ( m = 52 ) (წლიური სეზონურობა, რადგან მონაცემები კვირეულია).
 
+პარამეტრების ავტომატური შერჩევა-  ყოველი მაღაზიისთვის გამოვიყენეთ auto_arima, რათა მიეღწა ოპტიმალური (p, d, q) და (P, D, Q, m) პარამეტრები. ( max_p = 2 ), ( max_q = 2 ), ( max_P = 1 ), ( max_Q = 1 ) და ( m = 52 ) განისაზღვრა სეზონური პერიოდის საფუძველზე. 
+
+<img width="979" height="447" alt="image" src="https://github.com/user-attachments/assets/f2eaa4c6-dba3-464a-a9a6-bbd94ad29fa4" />
 
 ## N-BEATS 
 N-BEATS (Neural Basis Expansion Analysis for Time Series) არის თანამედროვე ღრმა სწავლების მოდელი დროითი მწკრივების პროგნოზირებისთვის, რომელიც შეიქმნა 2019 წელს.
@@ -519,3 +524,36 @@ Weighted Error Distribution
 შეცდომების უმეტესობა მცირეა (მარცხენა მხარეს კონცენტრირებული).ცოტაზე დიდი შეცდომებია, რაც ნორმალურია.
 
 MLflow Run URL: https://dagshub.com/TamariToradze/ML-Final.mlflow/#/experiments/19/runs/66cc17634ef14ce7813f8b135a3e6ef6
+
+## DLinear
+DLinear  არის deep learning-ის ერთ-ერთი მოდელი,რომელიც დაფუძნებულია time series ანალიზზე. მოდელი ითვალისწინებს სეზონურ და 'ტრენდულ' (ტენდენციური კომპონენტები) კომპონენტებს, ასევე გარე ფაქტორებს. ყველა ექსპერიმენტი დაფიქსირდა MLflow-ით Dagshub-ის რეპოზიტორიაში
+
+https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflow/#/experiments/0/runs/7b23c5e4c9eb43c08c724cf4f448cc9e
+
+https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflow/#/experiments/0
+
+პარამეტრები:
+- SEQ_LEN = 4
+- PRED_LEN = 2
+- BATCH_SIZE = 64
+- EPOCHS = 50
+- LEARNING_RATE = 0.001
+- PATIENCE = 10
+- TEST_SIZE = 0.1
+- VAL_SIZE = 0.05
+
+თავიდან, train.csv, stores.csv და features.csv გააერთიანდა train_full-ში, ხოლო test.csv - test_full-ში, left join-ის გამოყenებით.
+მერჯის შემდეგ წარმოიქმნა ორი იდენტური სვეტი IsHoliday_x და IsHoliday_y, რომელიც გავაერთიანე ერთ ცალკე სვეტად(IsHoliday).
+განსხვავებით linar/random forest/xgboost მოდელებისგან, აქ არ წაგვიშლია უარყოფითი Weekly_Sales-ის მნიშვნელობები, თუმცა გავფილტრეთ IQR მეთოდით.
+
+შედეგები:
+- MAE: 2430.1650
+  - RMSE: 4001.7834
+  - MAPE: 10758.0645
+  - R2: 0.9666
+
+ <img width="1725" height="522" alt="image" src="https://github.com/user-attachments/assets/a664f6a1-407f-4866-841a-044b04584968" />
+
+ <img width="1719" height="387" alt="image" src="https://github.com/user-attachments/assets/8ef0ef03-d09f-402c-8ea8-48e88003ac11" />
+
+
