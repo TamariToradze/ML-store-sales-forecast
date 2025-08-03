@@ -279,10 +279,10 @@ def temporal_cross_validation_split(train_data, n_splits=5):
     -ყოველი fold-ი იყენებს მომავალ მონაცემებს validation-ისთვის
 შემდეგ Optuna-ს გამოყენებით ვარჩევთ საუკეთესო ჰიპერპარამეტრებს
 საბოლოო შედეგები:
-MAE: 1294.69
-RMSE: 2402.67
-R²: 0.9888
-WMAE: 1340.13
+- MAE: 1294.69
+- RMSE: 2402.67
+- R²: 0.9888
+- WMAE: 1340.13
 
 MLflow tracking:
 LightGBM_Feature_Engineering:
