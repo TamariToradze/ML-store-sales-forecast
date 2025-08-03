@@ -559,3 +559,17 @@ https://dagshub.com/jgushiann/Walmart-Recruiting---Store-Sales-Forecasting.mlflo
  <img width="1719" height="387" alt="image" src="https://github.com/user-attachments/assets/8ef0ef03-d09f-402c-8ea8-48e88003ac11" />
 
 
+საბოლოო შედეგები:
+<img width="1013" height="71" alt="image" src="https://github.com/user-attachments/assets/e61aa087-20d9-4475-87b9-af14973f59c1" />
+
+<img width="1054" height="78" alt="image" src="https://github.com/user-attachments/assets/93bd3db3-6f21-4518-9815-28d16cd89f6c" />
+
+<img width="1059" height="78" alt="image" src="https://github.com/user-attachments/assets/c75f5a58-742b-4a30-aff2-6920c1d446c4" />
+
+
+ვაი...
+<img width="1020" height="66" alt="image" src="https://github.com/user-attachments/assets/010dbe33-21e5-4155-85b5-f5f591080e93" />
+
+
+
+
