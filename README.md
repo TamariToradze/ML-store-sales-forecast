@@ -313,20 +313,13 @@ s(t) - სეზონურობის კომპონენტი, რო�
 h(t) - დღესასწაულების კომპონენტი, რომელიც მოდელირებს სპეციალური მოვლენების ეფექტებს
 
 Prophet Input → 
-
-ds (Date)
-
-y (Weekly_Sales) 
-
-IsHoliday
-
-SuperbowlWeek
-
-LaborDayWeek
-
-ThanksgivingWeek
-
-ChristmasWeek
+- ds (Date)
+- y (Weekly_Sales) 
+- IsHoliday
+- superbowlWeek
+- LaborDayWeek
+- ThanksgivingWeek
+- ChristmasWeek
 
 grid search-ის გამოყენებით შერჩეულია საუკეთესო პარამეტრები 
 
@@ -374,11 +367,11 @@ Forecast: მომავლის h კვირის პროგნოზი
 Backcast: წარსულის რეკონსტრუქცია
 
 საბოლოო forecast = ყველა ბლოკის forecast-ების ჯამი
-    მოდელისთვის საჭირო სვეტები:  
-    unique_id - ღირების მაგალითი: "1_Store_Dept_5", "2_Store_Dept_12"
-    ds - თარიღი (datetime ფორმატში)
-    y - მიზნობრივი ცვლადი (Weekly_Sales)
-    IsHoliday - დღესასწაულის ინდიკატორი 
+    - მოდელისთვის საჭირო სვეტები:  
+    - unique_id - ღირების მაგალითი: "1_Store_Dept_5", "2_Store_Dept_12"
+    - ds - თარიღი (datetime ფორმატში)
+    - y - მიზნობრივი ცვლადი (Weekly_Sales)
+    - IsHoliday - დღესასწაულის ინდიკატორი 
 
 მონაცემების გაყოფა ხდება ასე:
 80/20 Temporal Split- არ არის Random Split, რაც სწორია Time Series-ისთვის!
